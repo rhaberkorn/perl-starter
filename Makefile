@@ -8,7 +8,7 @@ PERL_LDOPTS := -L/c/strawberry/perl/lib/CORE -lperl510
 
 CFLAGS := $(PERL_CCOPTS) -std=gnu99
 CPPFLAGS :=
-LDFLAGS := $(PERL_LDOPTS) -Wl,--subsystem,windows
+LDFLAGS := $(PERL_LDOPTS) -mwindows
 
 all : kephra.exe
 
