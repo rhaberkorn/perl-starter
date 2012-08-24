@@ -1,1 +1,4 @@
+#include <winuser.h>
+
 DEFAULT	ICON "kephra_proton.ico"
+1 RT_MANIFEST "kephra.manifest"

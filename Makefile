@@ -15,7 +15,7 @@ all : kephra.exe
 starter_xsi.c:
 	$(PERL) -MExtUtils::Embed -e xsinit -- -o $@
 
-icon.o : icon.rc kephra_proton.ico
+icon.o : icon.rc kephra_proton.ico kephra.manifest
 	$(RC) $< $@
 
 kephra.exe : starter.o starter_xsi.o icon.o
