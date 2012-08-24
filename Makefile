@@ -1,7 +1,9 @@
 CC := gcc
 RC := windres
 
-PERL := perl
+#PERL := perl
+PERL := /c/strawberry/perl/bin/perl
+
 PERL_CCOPTS := $(shell $(PERL) -MExtUtils::Embed -e ccopts)
 #PERL_LDOPTS := $(shell $(PERL) -MExtUtils::Embed -e ldopts)
 PERL_LDOPTS := -L/c/strawberry/perl/lib/CORE -lperl510
@@ -15,10 +17,10 @@ all : kephra.exe
 starter_xsi.c:
 	$(PERL) -MExtUtils::Embed -e xsinit -- -o $@
 
-icon.o : icon.rc kephra_proton.ico kephra.manifest
+kephra.o : kephra.rc kephra_proton.ico kephra.manifest
 	$(RC) $< $@
 
-kephra.exe : starter.o starter_xsi.o icon.o
+kephra.exe : starter.o starter_xsi.o kephra.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 clean:

@@ -7,6 +7,5 @@
 ## TODO
 
 * display Perl errors in MessageBox
-* link .manifest files as resources into the binary
 
 due to popular demand the starter might evolve into a generic Perl interpreter wrapper with support for reconfiguration without recompilation...
